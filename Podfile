@@ -6,5 +6,6 @@ target 'CouchbaseDemo' do
   use_frameworks!
 
   # Pods for CouchbaseDemo
+  pod 'CouchbaseLite-Swift', '~> 2.1.3'
 
 end
