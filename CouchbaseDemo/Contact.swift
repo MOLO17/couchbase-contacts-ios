@@ -8,6 +8,7 @@
 
 import Foundation
 
+// STEP 1
 struct Contact: Codable {
     var id: String
     var name: String?

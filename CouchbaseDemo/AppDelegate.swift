@@ -12,11 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    // STEP 40
     var replicatorManager: ReplicatorManager?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        // STEP 46
         if let url = URL(string: RemoteDatabaseURL) {
             replicatorManager = ReplicatorManager(remoteURL: url)
             replicatorManager?.startReplication()
@@ -45,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+        // STEP 47
         replicatorManager?.stopReplication()
     }
 

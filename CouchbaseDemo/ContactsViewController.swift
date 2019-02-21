@@ -18,6 +18,7 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         title = "Contacts"
 
+        // STEP 16
         tableView?.delegate = self
         tableView?.dataSource = self
 
@@ -26,12 +27,14 @@ class ContactsViewController: UIViewController {
 
     // MARK: - Private properties
 
+    // STEP 9
     private func loadData() {
         viewModel.loadData { [weak self] in
             self?.tableView?.reloadData()
         }
     }
 
+    // STEP 31
     fileprivate func navigateToDetail(contactId: String) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ContactDetailViewController") as? ContactDetailViewController {
             vc.contactId = contactId
@@ -41,11 +44,13 @@ class ContactsViewController: UIViewController {
 
     // MARK: - Private properties
 
+    // STEP 2
     private lazy var viewModel = ContactsViewModel()
 
     private static let reuseIdentifier = "ContactsTableViewCellReuseIdentifier"
 }
 
+// STEP 10, STEP 11, STEP 12, STEP 13, STEP 15, STEP 32, STEP 39
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {

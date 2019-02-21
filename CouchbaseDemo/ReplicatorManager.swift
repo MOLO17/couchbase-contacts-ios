@@ -12,12 +12,14 @@ import CouchbaseLiteSwift
 class ReplicatorManager {
 
     init(remoteURL: URL) {
+        // STEP 42
         do {
             database = try Database(name: DatabaseName)
         } catch {
             fatalError("Error opening database")
         }
 
+        // STEP 43
         let targetEndpoint = URLEndpoint(url: remoteURL)
 
         let replConfig = ReplicatorConfiguration(database: database, target: targetEndpoint)
@@ -29,6 +31,7 @@ class ReplicatorManager {
 
     // MARK: - Public properties
 
+    // STEP 44
     func startReplication() {
         listenerToken = replicator.addChangeListener { (change) in
             if let error = change.status.error as NSError? {
@@ -39,6 +42,7 @@ class ReplicatorManager {
         replicator.start()
     }
 
+    // STEP 45
     func stopReplication() {
         if let token = listenerToken {
             replicator.removeChangeListener(withToken: token)
@@ -48,6 +52,7 @@ class ReplicatorManager {
 
     // MARK: - Private properties
 
+    // STEP 41
     private let database: Database
 
     private let replicator: Replicator

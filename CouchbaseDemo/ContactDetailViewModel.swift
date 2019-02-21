@@ -12,6 +12,7 @@ import CouchbaseLiteSwift
 class ContactDetailViewModel {
 
     init() {
+        // STEP 27
         do {
             database = try Database(name: DatabaseName)
         } catch {
@@ -21,19 +22,20 @@ class ContactDetailViewModel {
 
     // MARK: - Public funtions
 
+    // STEP 28, STEP 29
     func getContact(by id: String, callback: @escaping (Contact?) -> Void) {
-
         guard let dict = database.document(withID: id)?.toDictionary(),
             let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
             else {
                 callback(nil)
                 return
-            }
+        }
 
         let contact = try? JSONDecoder().decode(Contact.self, from: jsonData)
         callback(contact)
     }
 
+    // STEP 33, STEP 34, STEP 35
     func editContact(
         id: String,
         name: String?,
@@ -42,6 +44,7 @@ class ContactDetailViewModel {
         email: String?,
         callback: () -> Void
     ) {
+        // STEP 34
         let contact = Contact(
             id: id,
             name: name,
@@ -50,6 +53,7 @@ class ContactDetailViewModel {
             email: email
         )
 
+        // STEP 35
         guard let jsonData = try? JSONEncoder().encode(contact),
             let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
             else { return }
@@ -64,5 +68,6 @@ class ContactDetailViewModel {
 
     // MARK: - Private properties
 
+    // STEP 26
     private let database: Database
 }

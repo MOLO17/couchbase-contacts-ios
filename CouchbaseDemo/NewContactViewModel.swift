@@ -12,6 +12,7 @@ import CouchbaseLiteSwift
 class NewContactViewModel {
 
     init() {
+        // STEP 19
         do {
             database = try Database(name: DatabaseName)
         } catch {
@@ -21,6 +22,7 @@ class NewContactViewModel {
 
     // MARK: - Public funtions
 
+    // STEP 20, STEP 21, STEP 22
     func saveContact(
         name: String?,
         surname: String?,
@@ -49,9 +51,11 @@ class NewContactViewModel {
         } catch {
             callback(false)
         }
+
     }
 
     // MARK: - Private properties
 
+    // STEP 18
     private let database: Database
 }

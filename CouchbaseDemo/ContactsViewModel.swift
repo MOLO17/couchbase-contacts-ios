@@ -12,6 +12,7 @@ import CouchbaseLiteSwift
 class ContactsViewModel {
 
     init() {
+        // STEP 5
         do {
             database = try Database(name: DatabaseName)
         } catch {
@@ -21,10 +22,12 @@ class ContactsViewModel {
 
     // MARK: - Public properties
 
+    // STEP 3
     var contacts: [Contact] = []
 
     // MARK: - Public funtions
 
+    // STEP 6, STEP 7, STEP 8
     func loadData(completion: @escaping () -> Void) {
         let query = QueryBuilder
             .select(SelectResult.all())
@@ -45,12 +48,14 @@ class ContactsViewModel {
         }
     }
 
+    // STEP 37, STEP 38
     func deleteContact(contactId: String, callback: (_ success: Bool) -> Void) {
+        // STEP 38
         guard let doc = database.document(withID: contactId)
             else {
                 callback(false)
                 return
-            }
+        }
 
         do {
             try database.deleteDocument(doc)
@@ -59,8 +64,10 @@ class ContactsViewModel {
         } catch {
             callback(false)
         }
+
     }
 
+    // STEP 14
     func makePhoneNumber(contact: Contact) -> String {
         return contact.phoneNumber ?? "No phone number"
     }
@@ -76,5 +83,6 @@ class ContactsViewModel {
 
     // MARK: - Private properties
 
+    // STEP 4
     private let database: Database
 }

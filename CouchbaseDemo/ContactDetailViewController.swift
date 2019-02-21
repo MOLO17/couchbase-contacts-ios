@@ -23,6 +23,7 @@ class ContactDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed() {
+        // STEP 36
         guard let id = contactId else { return }
         let name = nameTextField?.text == "" ? nil : nameTextField?.text
         let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
@@ -38,14 +39,17 @@ class ContactDetailViewController: UIViewController {
         ) { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
+
     }
 
+    // STEP 24
     var contactId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contact Detail"
 
+        // STEP 30
         if let id = contactId {
             viewModel.getContact(by: id) { [weak self] contact in
                 guard let contact = contact else { return }
@@ -67,5 +71,6 @@ class ContactDetailViewController: UIViewController {
         }
     }
 
+    // STEP 25
     private lazy var viewModel = ContactDetailViewModel()
 }
