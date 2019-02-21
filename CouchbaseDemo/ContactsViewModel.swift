@@ -26,7 +26,6 @@ class ContactsViewModel {
     // MARK: - Public funtions
 
     func loadData(completion: @escaping () -> Void) {
-
         let query = QueryBuilder
             .select(SelectResult.all())
             .from(DataSource.database(database))
@@ -67,17 +66,6 @@ class ContactsViewModel {
     }
 
     func makeNameSurname(contact: Contact) -> String {
-        if contact.name == nil && contact.surname == nil {
-            return "No name"
-        } else {
-            let name = contact.name ?? ""
-            let surname = contact.surname ?? ""
-
-            return "\(name) \(surname)".trimmingCharacters(in: CharacterSet())
-        }
-    }
-
-    func makeNameSurname2(contact: Contact) -> String {
         let nameSurname = [contact.name, contact.surname]
             .lazy
             .compactMap { $0 }

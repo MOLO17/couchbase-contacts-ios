@@ -61,7 +61,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
 
         let contact = viewModel.contacts[indexPath.row]
 
-        cell.textLabel?.text = viewModel.makeNameSurname2(contact: contact)
+        cell.textLabel?.text = viewModel.makeNameSurname(contact: contact)
         cell.detailTextLabel?.text = viewModel.makePhoneNumber(contact: contact)
 
         return cell
