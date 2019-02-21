@@ -20,6 +20,7 @@
 		956C3436221DA30600E30D2C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3435221DA30600E30D2C /* Utils.swift */; };
 		956C3438221DB66500E30D2C /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3437221DB66500E30D2C /* ContactDetailViewController.swift */; };
 		956C343A221DC07D00E30D2C /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3439221DC07D00E30D2C /* ContactDetailViewModel.swift */; };
+		95E73E7C221EC2C3009B962F /* ReplicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E73E7B221EC2C3009B962F /* ReplicatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		956C3435221DA30600E30D2C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		956C3437221DB66500E30D2C /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		956C3439221DC07D00E30D2C /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
+		95E73E7B221EC2C3009B962F /* ReplicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplicatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				956C3435221DA30600E30D2C /* Utils.swift */,
 				956C3437221DB66500E30D2C /* ContactDetailViewController.swift */,
 				956C3439221DC07D00E30D2C /* ContactDetailViewModel.swift */,
+				95E73E7B221EC2C3009B962F /* ReplicatorManager.swift */,
 			);
 			path = CouchbaseDemo;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				956C342E221D6D0700E30D2C /* Contact.swift in Sources */,
 				956C3432221D964600E30D2C /* NewContactViewController.swift in Sources */,
 				956C3436221DA30600E30D2C /* Utils.swift in Sources */,
+				95E73E7C221EC2C3009B962F /* ReplicatorManager.swift in Sources */,
 				956C3430221D70E700E30D2C /* ContactsViewModel.swift in Sources */,
 				956C341E221D643600E30D2C /* ContactsViewController.swift in Sources */,
 				956C3438221DB66500E30D2C /* ContactDetailViewController.swift in Sources */,

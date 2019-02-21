@@ -8,3 +8,6 @@
 
 let DatabaseName = "CouchbaseDemoDB"
 let Type = "type"
+let RemoteDatabaseURL = ""
+let Username = ""
+let Password = ""
