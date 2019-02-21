@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		3D063EE7F698050FCE617408 /* Pods_CouchbaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599CE5FD331F30FCECA41F4 /* Pods_CouchbaseDemo.framework */; };
 		956C341C221D643600E30D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C341B221D643600E30D2C /* AppDelegate.swift */; };
-		956C341E221D643600E30D2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C341D221D643600E30D2C /* ViewController.swift */; };
+		956C341E221D643600E30D2C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C341D221D643600E30D2C /* ContactsViewController.swift */; };
 		956C3421221D643600E30D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956C341F221D643600E30D2C /* Main.storyboard */; };
 		956C3423221D643700E30D2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C3422221D643700E30D2C /* Assets.xcassets */; };
 		956C3426221D643700E30D2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956C3424221D643700E30D2C /* LaunchScreen.storyboard */; };
+		956C342E221D6D0700E30D2C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C342D221D6D0700E30D2C /* Contact.swift */; };
+		956C3430221D70E700E30D2C /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C342F221D70E700E30D2C /* ContactsViewModel.swift */; };
+		956C3432221D964600E30D2C /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3431221D964600E30D2C /* NewContactViewController.swift */; };
+		956C3434221DA02200E30D2C /* NewContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3433221DA02200E30D2C /* NewContactViewModel.swift */; };
+		956C3436221DA30600E30D2C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3435221DA30600E30D2C /* Utils.swift */; };
+		956C3438221DB66500E30D2C /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3437221DB66500E30D2C /* ContactDetailViewController.swift */; };
+		956C343A221DC07D00E30D2C /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C3439221DC07D00E30D2C /* ContactDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +28,18 @@
 		83020F814EA503C961B89224 /* Pods-CouchbaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchbaseDemo.release.xcconfig"; path = "Target Support Files/Pods-CouchbaseDemo/Pods-CouchbaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		956C3418221D643600E30D2C /* CouchbaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchbaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C341B221D643600E30D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		956C341D221D643600E30D2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		956C341D221D643600E30D2C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		956C3420221D643600E30D2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		956C3422221D643700E30D2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		956C3425221D643700E30D2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		956C3427221D643700E30D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		956C342D221D6D0700E30D2C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		956C342F221D70E700E30D2C /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		956C3431221D964600E30D2C /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		956C3433221DA02200E30D2C /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
+		956C3435221DA30600E30D2C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		956C3437221DB66500E30D2C /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		956C3439221DC07D00E30D2C /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +68,6 @@
 				13D0A03A1BED6EC709231134 /* Pods-CouchbaseDemo.debug.xcconfig */,
 				83020F814EA503C961B89224 /* Pods-CouchbaseDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,11 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				956C341B221D643600E30D2C /* AppDelegate.swift */,
-				956C341D221D643600E30D2C /* ViewController.swift */,
+				956C341D221D643600E30D2C /* ContactsViewController.swift */,
 				956C341F221D643600E30D2C /* Main.storyboard */,
 				956C3422221D643700E30D2C /* Assets.xcassets */,
 				956C3424221D643700E30D2C /* LaunchScreen.storyboard */,
 				956C3427221D643700E30D2C /* Info.plist */,
+				956C342D221D6D0700E30D2C /* Contact.swift */,
+				956C342F221D70E700E30D2C /* ContactsViewModel.swift */,
+				956C3431221D964600E30D2C /* NewContactViewController.swift */,
+				956C3433221DA02200E30D2C /* NewContactViewModel.swift */,
+				956C3435221DA30600E30D2C /* Utils.swift */,
+				956C3437221DB66500E30D2C /* ContactDetailViewController.swift */,
+				956C3439221DC07D00E30D2C /* ContactDetailViewModel.swift */,
 			);
 			path = CouchbaseDemo;
 			sourceTree = "<group>";
@@ -211,7 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956C341E221D643600E30D2C /* ViewController.swift in Sources */,
+				956C3434221DA02200E30D2C /* NewContactViewModel.swift in Sources */,
+				956C342E221D6D0700E30D2C /* Contact.swift in Sources */,
+				956C3432221D964600E30D2C /* NewContactViewController.swift in Sources */,
+				956C3436221DA30600E30D2C /* Utils.swift in Sources */,
+				956C3430221D70E700E30D2C /* ContactsViewModel.swift in Sources */,
+				956C341E221D643600E30D2C /* ContactsViewController.swift in Sources */,
+				956C3438221DB66500E30D2C /* ContactDetailViewController.swift in Sources */,
+				956C343A221DC07D00E30D2C /* ContactDetailViewModel.swift in Sources */,
 				956C341C221D643600E30D2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
