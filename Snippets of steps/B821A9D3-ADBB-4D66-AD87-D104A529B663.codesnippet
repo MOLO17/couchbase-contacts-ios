@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>step35</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        guard let jsonData = try? JSONEncoder().encode(contact),
+            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
+            else { return }
+
+        let doc = MutableDocument(id: contact.id, data: dict)
+        doc.setString(String(describing: Contact.self), forKey: Type)
+
+        try? database.saveDocument(doc)
+
+        callback()
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B821A9D3-ADBB-4D66-AD87-D104A529B663</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>STEP 35</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

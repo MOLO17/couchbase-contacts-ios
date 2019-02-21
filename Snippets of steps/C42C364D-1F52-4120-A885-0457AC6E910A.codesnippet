@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>step8</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        query.addChangeListener { [weak self] queryChange in
+            self?.contacts = queryChange.results?
+                .allResults()
+                .compactMap { $0.toDictionary()[DatabaseName] }
+                .compactMap { dict -&gt; Contact? in
+                    guard let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
+                        else { return nil }
+                    return try? JSONDecoder().decode(Contact.self, from: jsonData)
+                } ?? []
+
+            completion()
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C42C364D-1F52-4120-A885-0457AC6E910A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>STEP 8</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

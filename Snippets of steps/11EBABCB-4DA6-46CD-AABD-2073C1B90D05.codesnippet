@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>step30</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        if let id = contactId {
+            viewModel.getContact(by: id) { [weak self] contact in
+                guard let contact = contact else { return }
+
+                self?.nameTextField?.text = contact.name
+                self?.surnameTextField?.text = contact.surname
+                self?.phoneNumberTextField?.text = contact.phoneNumber
+                self?.emailTextField?.text = contact.email
+            }
+        }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>11EBABCB-4DA6-46CD-AABD-2073C1B90D05</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>STEP 30</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

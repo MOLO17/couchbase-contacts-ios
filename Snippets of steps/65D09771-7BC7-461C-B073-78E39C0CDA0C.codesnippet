@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>step14</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    func makePhoneNumber(contact: Contact) -&gt; String {
+        return contact.phoneNumber ?? "No phone number"
+    }
+
+    func makeNameSurname(contact: Contact) -&gt; String {
+        let nameSurname = [contact.name, contact.surname]
+            .lazy
+            .compactMap { $0 }
+            .joined(separator: " ")
+
+        return nameSurname.isEmpty ? "No name" : nameSurname
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65D09771-7BC7-461C-B073-78E39C0CDA0C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>STEP 14</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
