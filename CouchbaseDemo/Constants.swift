@@ -1,5 +1,5 @@
 //
-//  Utils.swift
+//  Constants.swift
 //  CouchbaseDemo
 //
 //  Created by Matteo Sist on 20/02/2019.
