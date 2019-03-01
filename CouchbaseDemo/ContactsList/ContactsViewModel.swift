@@ -20,6 +20,10 @@ class ContactsViewModel {
         }
     }
 
+    deinit {
+        disposable?.dispose()
+    }
+
     // MARK: - Public properties
 
     // STEP 3
