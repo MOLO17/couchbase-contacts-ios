@@ -34,7 +34,7 @@ class ContactsViewModel {
             .from(DataSource.database(database))
             .where(Expression.property(Type).equalTo(Expression.string(String(describing: Contact.self))))
 
-        query.addChangeListener { [weak self] queryChange in
+        let token = query.addChangeListener { [weak self] queryChange in
             self?.contacts = queryChange.results?
                 .allResults()
                 .compactMap { $0.toDictionary()[DatabaseName] }
@@ -46,6 +46,8 @@ class ContactsViewModel {
 
             completion()
         }
+
+        disposable = Disposable(query: query, token: token)
     }
 
     // STEP 37, STEP 38
@@ -85,4 +87,21 @@ class ContactsViewModel {
 
     // STEP 4
     private let database: Database
+
+    private var disposable: Disposable?
+}
+
+class Disposable {
+
+    init(query: Query, token: ListenerToken) {
+        self.query = query
+        self.token = token
+    }
+
+    func dispose() {
+        query.removeChangeListener(withToken: token)
+    }
+
+    private let query: Query
+    private let token: ListenerToken
 }
