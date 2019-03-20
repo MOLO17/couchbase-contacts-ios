@@ -24,6 +24,7 @@ class ReplicatorManager {
 
         let replConfig = ReplicatorConfiguration(database: database, target: targetEndpoint)
         replConfig.replicatorType = .pushAndPull
+        replConfig.continuous = true
         replConfig.authenticator = BasicAuthenticator(username: Username, password: Password)
 
         replicator = Replicator(config: replConfig)
