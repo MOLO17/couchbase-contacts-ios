@@ -19,8 +19,8 @@ class ContactsViewController: UIViewController {
         title = "Contacts"
 
         // STEP 16
-        tableView?.delegate = self
-        tableView?.dataSource = self
+//        tableView?.delegate = self
+//        tableView?.dataSource = self
 
         loadData()
     }
@@ -29,62 +29,70 @@ class ContactsViewController: UIViewController {
 
     // STEP 9
     private func loadData() {
-        viewModel.loadData { [weak self] in
-            self?.tableView?.reloadData()
-        }
+//        viewModel.loadData { [weak self] in
+//            self?.tableView?.reloadData()
+//        }
     }
 
     // STEP 31
     fileprivate func navigateToDetail(contactId: String) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "ContactDetailViewController") as? ContactDetailViewController {
-            vc.contactId = contactId
-            navigationController?.pushViewController(vc, animated: true)
-        }
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "ContactDetailViewController") as? ContactDetailViewController {
+//            vc.contactId = contactId
+//            navigationController?.pushViewController(vc, animated: true)
+//        }
     }
 
     // MARK: - Private properties
 
     // STEP 2
-    private lazy var viewModel = ContactsViewModel()
+//    private lazy var viewModel = ContactsViewModel()
 
     private static let reuseIdentifier = "ContactsTableViewCellReuseIdentifier"
 }
 
-// STEP 10, STEP 11, STEP 12, STEP 13, STEP 15, STEP 32, STEP 39
-extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
+// STEP 10
+//extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    // STEP 11
+////    func numberOfSections(in tableView: UITableView) -> Int {
+////        return 1
+////    }
+//
+//    // STEP 12
+////    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+////        return viewModel.contacts.count
+////    }
+//
+//    // STEP 13
+////    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: ContactsViewController.reuseIdentifier)
+////
+////        // STEP 15
+//////        let contact = viewModel.contacts[indexPath.row]
+//////
+//////        cell.textLabel?.text = viewModel.makeNameSurname(contact: contact)
+//////        cell.detailTextLabel?.text = viewModel.makePhoneNumber(contact: contact)
+////
+////        return cell
+////    }
+//
+//    // STEP 32
+////    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+////        let contactId = viewModel.contacts[indexPath.row].id
+////        navigateToDetail(contactId: contactId)
+////    }
+//
+//    // STEP 39
+////    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+////        guard editingStyle == .delete else { return }
+////
+////        let contactId = viewModel.contacts[indexPath.row].id
+////        viewModel.deleteContact(contactId: contactId) { success in
+////            if success {
+////                tableView.deleteRows(at: [indexPath], with: .fade)
+////            }
+////        }
+////    }
+//
+//}
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contacts.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: ContactsViewController.reuseIdentifier)
-
-        let contact = viewModel.contacts[indexPath.row]
-
-        cell.textLabel?.text = viewModel.makeNameSurname(contact: contact)
-        cell.detailTextLabel?.text = viewModel.makePhoneNumber(contact: contact)
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contactId = viewModel.contacts[indexPath.row].id
-        navigateToDetail(contactId: contactId)
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-
-        let contactId = viewModel.contacts[indexPath.row].id
-        viewModel.deleteContact(contactId: contactId) { success in
-            if success {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }
-    }
-}

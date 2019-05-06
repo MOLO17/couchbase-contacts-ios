@@ -13,49 +13,51 @@ class NewContactViewModel {
 
     init() {
         // STEP 19
-        do {
-            database = try Database(name: DatabaseName)
-        } catch {
-            fatalError("Error opening database")
-        }
+//        do {
+//            database = try Database(name: DatabaseName)
+//        } catch {
+//            fatalError("Error opening database")
+//        }
     }
 
     // MARK: - Public funtions
 
-    // STEP 20, STEP 21, STEP 22
-    func saveContact(
-        name: String?,
-        surname: String?,
-        phoneNumber: String?,
-        email: String?,
-        callback: (_ success: Bool) -> Void
-    ) {
-        let contact = Contact(
-            id: UUID().uuidString,
-            name: name,
-            surname: surname,
-            phoneNumber: phoneNumber,
-            email: email
-        )
-
-        guard let jsonData = try? JSONEncoder().encode(contact),
-            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
-            else { return }
-
-        let doc = MutableDocument(id: contact.id, data: dict)
-        doc.setString(String(describing: Contact.self), forKey: Type)
-
-        do {
-            try database.saveDocument(doc)
-            callback(true)
-        } catch {
-            callback(false)
-        }
-
-    }
+    // STEP 20
+//    func saveContact(
+//        name: String?,
+//        surname: String?,
+//        phoneNumber: String?,
+//        email: String?,
+//        callback: (_ success: Bool) -> Void
+//    ) {
+//        // STEP 21
+////        let contact = Contact(
+////            id: UUID().uuidString,
+////            name: name,
+////            surname: surname,
+////            phoneNumber: phoneNumber,
+////            email: email
+////        )
+//
+//        // STEP 22
+////        guard let jsonData = try? JSONEncoder().encode(contact),
+////            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
+////            else { return }
+////
+////        let doc = MutableDocument(id: contact.id, data: dict)
+////        doc.setString(String(describing: Contact.self), forKey: Type)
+////
+////        do {
+////            try database.saveDocument(doc)
+////            callback(true)
+////        } catch {
+////            callback(false)
+////        }
+//
+//    }
 
     // MARK: - Private properties
 
     // STEP 18
-    private let database: Database
+//    private let database: Database
 }

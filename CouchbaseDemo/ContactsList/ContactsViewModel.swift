@@ -13,11 +13,11 @@ class ContactsViewModel {
 
     init() {
         // STEP 5
-        do {
-            database = try Database(name: DatabaseName)
-        } catch {
-            fatalError("Error opening database")
-        }
+//        do {
+//            database = try Database(name: DatabaseName)
+//        } catch {
+//            fatalError("Error opening database")
+//        }
     }
 
     deinit {
@@ -27,70 +27,74 @@ class ContactsViewModel {
     // MARK: - Public properties
 
     // STEP 3
-    var contacts: [Contact] = []
+//    var contacts: [Contact] = []
 
     // MARK: - Public funtions
 
-    // STEP 6, STEP 7, STEP 8
-    func loadData(completion: @escaping () -> Void) {
-        let query = QueryBuilder
-            .select(SelectResult.all())
-            .from(DataSource.database(database))
-            .where(Expression.property(Type).equalTo(Expression.string(String(describing: Contact.self))))
+    // STEP 6
+//    func loadData(completion: @escaping () -> Void) {
+//
+//        // STEP 7
+////        let query = QueryBuilder
+////            .select(SelectResult.all())
+////            .from(DataSource.database(database))
+////            .where(Expression.property(Type).equalTo(Expression.string(String(describing: Contact.self))))
+//
+//        // STEP 8
+////        let token = query.addChangeListener { [weak self] queryChange in
+////            self?.contacts = queryChange.results?
+////                .allResults()
+////                .compactMap { $0.toDictionary()[DatabaseName] }
+////                .compactMap { dict -> Contact? in
+////                    guard let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
+////                        else { return nil }
+////                    return try? JSONDecoder().decode(Contact.self, from: jsonData)
+////                } ?? []
+////
+////            completion()
+////        }
+////
+////        disposable = Disposable(query: query, token: token)
+//    }
 
-        let token = query.addChangeListener { [weak self] queryChange in
-            self?.contacts = queryChange.results?
-                .allResults()
-                .compactMap { $0.toDictionary()[DatabaseName] }
-                .compactMap { dict -> Contact? in
-                    guard let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-                        else { return nil }
-                    return try? JSONDecoder().decode(Contact.self, from: jsonData)
-                } ?? []
-
-            completion()
-        }
-
-        disposable = Disposable(query: query, token: token)
-    }
-
-    // STEP 37, STEP 38
-    func deleteContact(contactId: String, callback: (_ success: Bool) -> Void) {
-        // STEP 38
-        guard let doc = database.document(withID: contactId)
-            else {
-                callback(false)
-                return
-        }
-
-        do {
-            try database.deleteDocument(doc)
-            contacts.removeAll(where: { $0.id == contactId })
-            callback(true)
-        } catch {
-            callback(false)
-        }
-
-    }
+    // STEP 37
+//    func deleteContact(contactId: String, callback: (_ success: Bool) -> Void) {
+//
+//        // STEP 38
+////        guard let doc = database.document(withID: contactId)
+////            else {
+////                callback(false)
+////                return
+////        }
+////
+////        do {
+////            try database.deleteDocument(doc)
+////            contacts.removeAll(where: { $0.id == contactId })
+////            callback(true)
+////        } catch {
+////            callback(false)
+////        }
+//
+//    }
 
     // STEP 14
-    func makePhoneNumber(contact: Contact) -> String {
-        return contact.phoneNumber ?? "No phone number"
-    }
-
-    func makeNameSurname(contact: Contact) -> String {
-        let nameSurname = [contact.name, contact.surname]
-            .lazy
-            .compactMap { $0 }
-            .joined(separator: " ")
-
-        return nameSurname.isEmpty ? "No name" : nameSurname
-    }
+//    func makePhoneNumber(contact: Contact) -> String {
+//        return contact.phoneNumber ?? "No phone number"
+//    }
+//
+//    func makeNameSurname(contact: Contact) -> String {
+//        let nameSurname = [contact.name, contact.surname]
+//            .lazy
+//            .compactMap { $0 }
+//            .joined(separator: " ")
+//
+//        return nameSurname.isEmpty ? "No name" : nameSurname
+//    }
 
     // MARK: - Private properties
 
     // STEP 4
-    private let database: Database
+//    private let database: Database
 
     private var disposable: Disposable?
 }

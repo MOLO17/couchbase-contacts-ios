@@ -24,42 +24,42 @@ class ContactDetailViewController: UIViewController {
 
     @IBAction func saveButtonPressed() {
         // STEP 36
-        guard let id = contactId else { return }
-        let name = nameTextField?.text == "" ? nil : nameTextField?.text
-        let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
-        let phoneNumber = phoneNumberTextField?.text == "" ? nil : phoneNumberTextField?.text
-        let email = emailTextField?.text == "" ? nil : emailTextField?.text
-
-        viewModel.editContact(
-            id: id,
-            name: name,
-            surname: surname,
-            phoneNumber: phoneNumber,
-            email: email
-        ) { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
-        }
+//        guard let id = contactId else { return }
+//        let name = nameTextField?.text == "" ? nil : nameTextField?.text
+//        let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
+//        let phoneNumber = phoneNumberTextField?.text == "" ? nil : phoneNumberTextField?.text
+//        let email = emailTextField?.text == "" ? nil : emailTextField?.text
+//
+//        viewModel.editContact(
+//            id: id,
+//            name: name,
+//            surname: surname,
+//            phoneNumber: phoneNumber,
+//            email: email
+//        ) { [weak self] in
+//            self?.navigationController?.popViewController(animated: true)
+//        }
 
     }
 
     // STEP 24
-    var contactId: String?
+//    var contactId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contact Detail"
 
-        // STEP 30
-        if let id = contactId {
-            viewModel.getContact(by: id) { [weak self] contact in
-                guard let contact = contact else { return }
-
-                self?.nameTextField?.text = contact.name
-                self?.surnameTextField?.text = contact.surname
-                self?.phoneNumberTextField?.text = contact.phoneNumber
-                self?.emailTextField?.text = contact.email
-            }
-        }
+//        // STEP 30
+//        if let id = contactId {
+//            viewModel.getContact(by: id) { [weak self] contact in
+//                guard let contact = contact else { return }
+//
+//                self?.nameTextField?.text = contact.name
+//                self?.surnameTextField?.text = contact.surname
+//                self?.phoneNumberTextField?.text = contact.phoneNumber
+//                self?.emailTextField?.text = contact.email
+//            }
+//        }
     }
 
     private var editMode: Bool = false {
@@ -72,5 +72,5 @@ class ContactDetailViewController: UIViewController {
     }
 
     // STEP 25
-    private lazy var viewModel = ContactDetailViewModel()
+//    private lazy var viewModel = ContactDetailViewModel()
 }

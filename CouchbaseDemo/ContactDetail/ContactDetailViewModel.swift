@@ -13,61 +13,63 @@ class ContactDetailViewModel {
 
     init() {
         // STEP 27
-        do {
-            database = try Database(name: DatabaseName)
-        } catch {
-            fatalError("Error opening database")
-        }
+//        do {
+//            database = try Database(name: DatabaseName)
+//        } catch {
+//            fatalError("Error opening database")
+//        }
     }
 
     // MARK: - Public funtions
 
-    // STEP 28, STEP 29
-    func getContact(by id: String, callback: @escaping (Contact?) -> Void) {
-        guard let dict = database.document(withID: id)?.toDictionary(),
-            let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-            else {
-                callback(nil)
-                return
-        }
+    // STEP 28
+//    func getContact(by id: String, callback: @escaping (Contact?) -> Void) {
+//
+//        // STEP 29
+////        guard let dict = database.document(withID: id)?.toDictionary(),
+////            let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
+////            else {
+////                callback(nil)
+////                return
+////        }
+////
+////        let contact = try? JSONDecoder().decode(Contact.self, from: jsonData)
+////        callback(contact)
+//    }
 
-        let contact = try? JSONDecoder().decode(Contact.self, from: jsonData)
-        callback(contact)
-    }
-
-    // STEP 33, STEP 34, STEP 35
-    func editContact(
-        id: String,
-        name: String?,
-        surname: String?,
-        phoneNumber: String?,
-        email: String?,
-        callback: () -> Void
-    ) {
-        // STEP 34
-        let contact = Contact(
-            id: id,
-            name: name,
-            surname: surname,
-            phoneNumber: phoneNumber,
-            email: email
-        )
-
-        // STEP 35
-        guard let jsonData = try? JSONEncoder().encode(contact),
-            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
-            else { return }
-
-        let doc = MutableDocument(id: contact.id, data: dict)
-        doc.setString(String(describing: Contact.self), forKey: Type)
-
-        try? database.saveDocument(doc)
-
-        callback()
-    }
+    // STEP 33
+//    func editContact(
+//        id: String,
+//        name: String?,
+//        surname: String?,
+//        phoneNumber: String?,
+//        email: String?,
+//        callback: () -> Void
+//    ) {
+//        // STEP 34
+////        let contact = Contact(
+////            id: id,
+////            name: name,
+////            surname: surname,
+////            phoneNumber: phoneNumber,
+////            email: email
+////        )
+//
+//        // STEP 35
+////        guard let jsonData = try? JSONEncoder().encode(contact),
+////            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
+////            else { return }
+////
+////        let doc = MutableDocument(id: contact.id, data: dict)
+////        doc.setString(String(describing: Contact.self), forKey: Type)
+////
+////        try? database.saveDocument(doc)
+//
+//        callback()
+//    }
 
     // MARK: - Private properties
 
     // STEP 26
-    private let database: Database
+//    private let database: Database
 }

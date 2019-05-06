@@ -17,21 +17,21 @@ class NewContactViewController: UIViewController {
 
     @IBAction func saveButtonPressed() {
         // STEP 23
-        let name = nameTextField?.text == "" ? nil : nameTextField?.text
-        let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
-        let phoneNumber = phoneNumberTextField?.text == "" ? nil : phoneNumberTextField?.text
-        let email = emailTextField?.text == "" ? nil : emailTextField?.text
-
-        viewModel.saveContact(
-            name: name,
-            surname: surname,
-            phoneNumber: phoneNumber,
-            email: email
-        ) { [weak self] success in
-            if success {
-                self?.navigationController?.popViewController(animated: true)
-            }
-        }
+//        let name = nameTextField?.text == "" ? nil : nameTextField?.text
+//        let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
+//        let phoneNumber = phoneNumberTextField?.text == "" ? nil : phoneNumberTextField?.text
+//        let email = emailTextField?.text == "" ? nil : emailTextField?.text
+//
+//        viewModel.saveContact(
+//            name: name,
+//            surname: surname,
+//            phoneNumber: phoneNumber,
+//            email: email
+//        ) { [weak self] success in
+//            if success {
+//                self?.navigationController?.popViewController(animated: true)
+//            }
+//        }
     }
 
     override func viewDidLoad() {
@@ -42,5 +42,5 @@ class NewContactViewController: UIViewController {
     // MARK: - Private properties
 
     // STEP 17
-    private lazy var viewModel = NewContactViewModel()
+//    private lazy var viewModel = NewContactViewModel()
 }

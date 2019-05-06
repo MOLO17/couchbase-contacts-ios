@@ -13,16 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     // STEP 40
-    var replicatorManager: ReplicatorManager?
+//    var replicatorManager: ReplicatorManager?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
         // STEP 46
-        if let url = URL(string: RemoteDatabaseURL) {
-            replicatorManager = ReplicatorManager(remoteURL: url)
-            replicatorManager?.startReplication()
-        }
+//        if let url = URL(string: RemoteDatabaseURL) {
+//            replicatorManager = ReplicatorManager(remoteURL: url)
+//            replicatorManager?.startReplication()
+//        }
 
         return true
     }
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
         // STEP 47
-        replicatorManager?.stopReplication()
+//        replicatorManager?.stopReplication()
     }
 
 
