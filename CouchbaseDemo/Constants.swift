@@ -8,6 +8,6 @@
 
 let DatabaseName = "CouchbaseDemoDB"
 let Type = "type"
-let RemoteDatabaseURL = ""
+let RemoteDatabaseURL = "ws://localhost:4984/couchbase-demo/"
 let Username = ""
 let Password = ""
