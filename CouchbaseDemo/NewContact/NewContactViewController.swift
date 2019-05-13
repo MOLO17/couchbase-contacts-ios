@@ -16,7 +16,8 @@ class NewContactViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField?
 
     @IBAction func saveButtonPressed() {
-        // STEP 23
+        /// STEP 23
+        /// Retrieve data from the views, check nullability and invoke saveContact function.
 //        let name = nameTextField?.text == "" ? nil : nameTextField?.text
 //        let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
 //        let phoneNumber = phoneNumberTextField?.text == "" ? nil : phoneNumberTextField?.text
@@ -41,6 +42,7 @@ class NewContactViewController: UIViewController {
 
     // MARK: - Private properties
 
-    // STEP 17
+    /// STEP 17
+    /// Declare viewModel variable and init it lazily.
 //    private lazy var viewModel = NewContactViewModel()
 }

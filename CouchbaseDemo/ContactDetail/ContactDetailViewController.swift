@@ -23,7 +23,8 @@ class ContactDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed() {
-        // STEP 36
+        /// STEP 36
+        /// Retrieve data from the views, check nullability and invoke editContact function.
 //        guard let id = contactId else { return }
 //        let name = nameTextField?.text == "" ? nil : nameTextField?.text
 //        let surname = surnameTextField?.text == "" ? nil : surnameTextField?.text
@@ -42,14 +43,16 @@ class ContactDetailViewController: UIViewController {
 
     }
 
-    // STEP 24
+    /// STEP 24
+    /// Declare contactId variable
 //    var contactId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contact Detail"
 
-//        // STEP 30
+        /// STEP 30
+        /// Check if contactId is nil, otherwise retrieve Contact data using getContactById function, and then fill in the fields.
 //        if let id = contactId {
 //            viewModel.getContact(by: id) { [weak self] contact in
 //                guard let contact = contact else { return }
@@ -71,6 +74,7 @@ class ContactDetailViewController: UIViewController {
         }
     }
 
-    // STEP 25
+    /// STEP 25
+    /// Declare viewModel variable and init it lazily.
 //    private lazy var viewModel = ContactDetailViewModel()
 }

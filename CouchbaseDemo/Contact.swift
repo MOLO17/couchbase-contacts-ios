@@ -8,7 +8,8 @@
 
 import Foundation
 
-// STEP 1
+/// STEP 1
+/// Create Contact model, will be use to display data and to store it in the database
 //struct Contact: Codable {
 //    var id: String
 //    var name: String?
