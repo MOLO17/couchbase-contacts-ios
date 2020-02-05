@@ -1,16 +1,16 @@
 PODS:
-  - CouchbaseLite-Swift (2.1.3)
+  - CouchbaseLite-Swift (2.7.0)
 
 DEPENDENCIES:
-  - CouchbaseLite-Swift (~> 2.1.3)
+  - CouchbaseLite-Swift (~> 2.7.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - CouchbaseLite-Swift
 
 SPEC CHECKSUMS:
-  CouchbaseLite-Swift: 4e1c64ac055b7681dd1cd28bf09b3eb5f5d17847
+  CouchbaseLite-Swift: fc942af766946a7b1efbee2cc9b72ae04ec632e1
 
-PODFILE CHECKSUM: 9b601bb199ebdf28679a94caf2004b53466dbeb2
+PODFILE CHECKSUM: 2cbbe76fc16d277bd1c0ad0cdef383f2631dddd5
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.8.4

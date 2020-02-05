@@ -12,19 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    /// STEP 40
-    /// Declase replication manager variable.
-//    var replicatorManager: ReplicatorManager?
+    
+    private let syncManager: SyncManager = CouchbaseContactsRepository.instance
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-
-        /// STEP 46
-        /// Check if url string is valid and init replicationManager.
-//        if let url = URL(string: RemoteDatabaseURL) {
-//            replicatorManager = ReplicatorManager(remoteURL: url)
-//        }
-
         return true
     }
 
@@ -37,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 
-        /// STEP 48
-        /// Stop replication when app enter in background.
-//        replicatorManager?.stopReplication()
+        syncManager.stopSync()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -48,10 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
-        /// STEP 47
-        /// Start replication when app enter in foreground.
-//      replicatorManager?.startReplication()
+        
+        syncManager.startSync()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
