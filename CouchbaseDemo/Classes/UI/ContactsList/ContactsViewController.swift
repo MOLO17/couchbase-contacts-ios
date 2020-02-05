@@ -84,9 +84,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         guard editingStyle == .delete else { return }
 
         let contactId = viewModel.contacts[indexPath.row].identifier
-        viewModel.deleteContact(contactId: contactId) { [weak tableView] in
-            tableView?.deleteRows(at: [indexPath], with: .fade)
-        }
+        viewModel.deleteContact(contactId: contactId)
     }
 }
 

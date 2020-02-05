@@ -27,10 +27,9 @@ class ContactDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if case let .edit(contactId) = type {
-            viewModel.getContact(by: contactId) { [weak self] contact in
-                self?.didReceive(contact: contact)
-            }
+
+        viewModel.getContact() { [weak self] contact in
+            self?.didReceive(contact: contact)
         }
     }
     
