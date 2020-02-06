@@ -26,8 +26,10 @@ class ContactDetailViewModel {
 
     // MARK: - Public funtions
 
-    func getContact(by id: String, callback: @escaping (Contact) -> ()) {
-        contactsRepository.getContact(byId: id) { result in
+    func getContact(callback: @escaping (Contact) -> ()) {
+        guard case let .edit(contactId) = type else { return }
+
+        contactsRepository.getContact(byId: contactId) { result in
             switch result {
             case .success(let contact):
                 callback(contact)

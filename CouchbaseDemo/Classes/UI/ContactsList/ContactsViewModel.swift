@@ -23,7 +23,7 @@ class ContactsViewModel {
 
     // MARK: - Public properties
 
-    var contacts: [UiContact] = []
+    private(set) var contacts: [UiContact] = []
 
     // MARK: - Public funtions
 
@@ -41,12 +41,12 @@ class ContactsViewModel {
         }
     }
     
-    func deleteContact(contactId: String, callback: @escaping () -> Void) {
+    func deleteContact(contactId: String, callback: (() -> Void)? = nil) {
 
         contactsRepository.delete(contact: contactId) { result in
             switch result {
             case .success:
-                callback()
+                callback?()
                 break
             case .failure(let error):
                 print(error)

@@ -19,7 +19,6 @@ class CouchbaseContactsRepository: ContactsRepository, SyncManager {
             .select(SelectResult.all())
             .from(DataSource.database(database))
             .where(Expression.property(Type).equalTo(Expression.string(contactType)))
-            .limit(Expression.int(1))
 
         let token = query.addChangeListener { [weak self] queryChange in
             let contacts = queryChange.results?
@@ -46,7 +45,7 @@ class CouchbaseContactsRepository: ContactsRepository, SyncManager {
                 let contact = try decoder.decode(Contact.self, from: jsonData)
                 callback(.success(contact))
             } catch {
-                callback(.failure(.errorDeletingContact(error)))
+                callback(.failure(.errorGettingContact(error)))
             }
         } else {
             callback(.failure(.errorInvalidContact))
@@ -93,6 +92,7 @@ class CouchbaseContactsRepository: ContactsRepository, SyncManager {
         replConfig.authenticator = BasicAuthenticator(username: Username, password: Password)
 
         replicator = Replicator(config: replConfig)
+        replicator?.start()
         
         listenerToken = replicator?.addChangeListener { (change) in
             if let error = change.status.error as NSError? {
